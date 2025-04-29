@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promoção Cacau Show</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f3ef;
+      margin: 0;
+      padding: 0;
+      color: #3e2723;
+    }
+    header, footer {
+      background-color: #4e342e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    header img {
+      max-height: 60px;
+    }
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      background-color: #d7ccc8;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid #a1887f;
+    }
+    .step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .step::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 30%;
+      width: 40%;
+      height: 3px;
+      background-color: #6d4c41;
+      border-radius: 2px;
+    }
+    .container {
+      padding: 2rem 1rem;
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #4e342e;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .radio-group {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+    }
+    .radio-group label {
+      background-color: #efebe9;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #d7ccc8;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    button {
+      background-color: #8d6e63;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      display: block;
+      margin: auto;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #6d4c41;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      background-color: #4e342e;
+    }
+    footer p {
+      margin: 0;
+      padding: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+    .product-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border: 1px solid #d7ccc8;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .product-card img {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .product-card .product-info {
+      flex-grow: 1;
+    }
+    .product-card .price {
+      font-size: 1.2rem;
+      color: #8d6e63;
+    }
+    .product-card .price del {
+      color: #9e9e9e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-cacau-show.png" alt="Cacau Show">
+  </header>
+
+  <div class="step-indicator">
+    <div class="step">1. Pesquisa</div>
+    <div class="step">2. Produto + CEP</div>
+    <div class="step">3. Dados</div>
+    <div class="step">4. Tipo de Envio</div>
+    <div class="step">5. Confirmação</div>
+  </div>
+
+  <div class="container" id="pagina1">
+    <h1>🎉 Ganhe Chocolate Grátis da Cacau Show!</h1>
+    <p>🍫 Responda nossa pesquisa rápida e receba um delicioso chocolate na sua casa! Promoção válida até acabarem os estoques disponíveis.</p>
+
+    <form id="pesquisa-form">
+      <div class="question">
+        <label>1. Você gosta de chocolate ao leite?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="q1" value="Sim" required /> Sim</label>
+          <label><input type="radio" name="q1" value="Não" required /> Não</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>2. Você costuma presentear com chocolates?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="q2" value="Sim" required /> Sim</label>
+          <label><input type="radio" name="q2" value="Não" required /> Não</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>3. Você já comprou na Cacau Show?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="q3" value="Sim" required /> Sim</label>
+          <label><input type="radio" name="q3" value="Não" required /> Não</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>4. Você compraria chocolates da Cacau Show novamente?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="q4" value="Sim" required /> Sim</label>
+          <label><input type="radio" name="q4" value="Não" required /> Não</label>
+        </div>
+      </div>
+
+      <button type="submit">👉 Avançar</button>
+    </form>
+  </div>
+
+  <div class="container hidden" id="pagina2">
+    <h1>🍫 Escolha seu Chocolate!</h1>
+    <p>Agora selecione seu brinde favorito e informe seu CEP para o envio:</p>
+
+    <div class="product-card">
+      <img src="produto1.jpg" alt="Ovo de Páscoa ao Leite Pantufa Ursinhos Carinhosos Ursinha Carinhosa G 170g">
+      <div class="product-info">
+        <h3>Ovo de Páscoa ao Leite Pantufa Ursinhos Carinhosos Ursinha Carinhosa G 170g</h3>
+        <p>SKU: 1003539</p>
+        <p class="price"><del>R$179,99</del> R$0,00</p>
+      </div>
+    </div>
+    <!-- Replicar o produto acima para outros produtos -->
+    
+    <div class="question">
+      <label for="produto">Selecione o produto:</label>
+      <select id="produto" required>
+        <option value="">-- Escolha --</option>
+        <option value="trufa">Trufa ao Leite 13g</option>
+        <option value="tablete">Mini Tablete 20g</option>
+        <option value="bombom">Bombom Gourmet</option>
+      </select>
+    </div>
+    <div class="question">
+      <label for="cep">Digite seu CEP:</label>
+      <input type="text" id="cep" maxlength="9" placeholder="00000-000" required />
+    </div>
+    <button id="avancar-para-dados">👉 Avançar</button>
+  </div>
+
+  <footer>
+    <p>Esta é uma ação promocional independente. O produto é gratuito, sendo cobrado apenas o valor referente ao envio, pago exclusivamente via PIX. Promoção válida até acabarem os estoques disponíveis. Para mais informações, consulte nossa política de privacidade e termos de uso.</p>
+  </footer>
+
+  <script>
+    document.getElementById("pesquisa-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("pagina1").classList.add("hidden");
+      document.getElementById("pagina2").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
